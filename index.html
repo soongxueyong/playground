@@ -35,7 +35,7 @@ limitations under the License.
   <meta name="twitter:image:height" content="295">
 
   <meta name="author" content="Daniel Smilkov and Shan Carter">
-  <title>A Neural Network Playground</title>
+  <title>神经网络演练场</title>
   <link rel="stylesheet" href="bundle.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Material+Icons" rel="stylesheet" type="text/css">
   <script src="lib.js"></script>
@@ -50,30 +50,30 @@ limitations under the License.
   </a>
   <!-- Header -->
   <header>
-    <h1 class="l--page">Tinker With a <b>Neural Network</b> <span class="optional">Right Here </span>in Your Browser.<br>Don’t Worry, You Can’t Break It. We Promise.</h1>
+    <h1 class="l--page"><b>神经网络</b>演练场 <span class="optional"></h1>
   </header>
 
   <!-- Top Controls -->
   <div id="top-controls">
     <div class="container l--page">
       <div class="timeline-controls">
-        <button class="mdl-button mdl-js-button mdl-button--icon ui-resetButton" id="reset-button" title="Reset the network">
+        <button class="mdl-button mdl-js-button mdl-button--icon ui-resetButton" id="reset-button" title="重置(Reset the network)">
           <i class="material-icons">replay</i>
         </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored ui-playButton" id="play-pause-button" title="Run/Pause">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored ui-playButton" id="play-pause-button" title="(运行/停止)Run/Pause">
           <i class="material-icons">play_arrow</i>
           <i class="material-icons">pause</i>
         </button>
-        <button class="mdl-button mdl-js-button mdl-button--icon ui-stepButton" id="next-step-button" title="Step">
+        <button class="mdl-button mdl-js-button mdl-button--icon ui-stepButton" id="next-step-button" title="步(Step)">
           <i class="material-icons">skip_next</i>
         </button>
       </div>
       <div class="control">
-        <span class="label">Epoch</span>
+        <span class="label">周期</span>
         <span class="value" id="iter-number"></span>
       </div>
       <div class="control ui-learningRate">
-        <label for="learningRate">Learning rate</label>
+        <label for="learningRate">学习率</label>
         <div class="select">
           <select id="learningRate">
             <option value="0.00001">0.00001</option>
@@ -91,28 +91,28 @@ limitations under the License.
         </div>
       </div>
       <div class="control ui-activation">
-        <label for="activations">Activation</label>
+        <label for="activations">激活函数</label>
         <div class="select">
           <select id="activations">
-            <option value="relu">ReLU</option>
-            <option value="tanh">Tanh</option>
-            <option value="sigmoid">Sigmoid</option>
-            <option value="linear">Linear</option>
+            <option value="relu">ReLU(线性整流函数)</option>
+            <option value="tanh">Tanh(双曲正切函数)</option>
+            <option value="sigmoid">Sigmoid(逻辑斯谛函数)</option>
+            <option value="linear">Linear(线性函数)</option>
           </select>
         </div>
       </div>
       <div class="control ui-regularization">
-        <label for="regularizations">Regularization</label>
+        <label for="regularizations">正则化</label>
         <div class="select">
           <select id="regularizations">
-            <option value="none">None</option>
-            <option value="L1">L1</option>
-            <option value="L2">L2</option>
+            <option value="none">None(无)</option>
+            <option value="L1">L1(Lasso回归)</option>
+            <option value="L2">L2(Ridge回归)</option>
           </select>
         </div>
       </div>
       <div class="control ui-regularizationRate">
-        <label for="regularRate">Regularization rate</label>
+        <label for="regularRate">正则化率</label>
         <div class="select">
           <select id="regularRate">
             <option value="0">0</option>
@@ -129,11 +129,11 @@ limitations under the License.
         </div>
       </div>
       <div class="control ui-problem">
-        <label for="problem">Problem type</label>
+        <label for="problem">问题类型</label>
         <div class="select">
           <select id="problem">
-            <option value="classification">Classification</option>
-            <option value="regression">Regression</option>
+            <option value="classification">分类(Classification)</option>
+            <option value="regression">回归(Regression)</option>
           </select>
         </div>
       </div>
@@ -146,60 +146,60 @@ limitations under the License.
     <!--  Data Column-->
     <div class="column data">
       <h4>
-        <span>Data</span>
+        <span>数据</span>
       </h4>
       <div class="ui-dataset">
-        <p>Which dataset do you want to use?</p>
+        <p>选择数据</p>
         <div class="dataset-list">
-          <div class="dataset" title="Circle">
+          <div class="dataset" title="圆形(Circle)">
             <canvas class="data-thumbnail" data-dataset="circle"></canvas>
           </div>
-          <div class="dataset" title="Exclusive or">
+          <div class="dataset" title="异或(Exclusive or)">
             <canvas class="data-thumbnail" data-dataset="xor"></canvas>
           </div>
-          <div class="dataset" title="Gaussian">
+          <div class="dataset" title="高斯(Gaussian)">
             <canvas class="data-thumbnail" data-dataset="gauss"></canvas>
           </div>
-          <div class="dataset" title="Spiral">
+          <div class="dataset" title="螺旋(Spiral)">
             <canvas class="data-thumbnail" data-dataset="spiral"></canvas>
           </div>
-          <div class="dataset" title="Plane">
+          <div class="dataset" title="平面(Plane)">
             <canvas class="data-thumbnail" data-regDataset="reg-plane"></canvas>
           </div>
-          <div class="dataset" title="Multi gaussian">
+          <div class="dataset" title="多维高斯(Multi gaussian)">
             <canvas class="data-thumbnail" data-regDataset="reg-gauss"></canvas>
           </div>
         </div>
       </div>
       <div>
         <div class="ui-percTrainData">
-          <label for="percTrainData">Ratio of training to test data:&nbsp;&nbsp;<span class="value">XX</span>%</label>
+          <label for="percTrainData">训练集占比<span class="value">XX</span>%</label>
           <p class="slider">
             <input class="mdl-slider mdl-js-slider" type="range" id="percTrainData" min="10" max="90" step="10">
           </p>
         </div>
         <div class="ui-noise">
-          <label for="noise">Noise:&nbsp;&nbsp;<span class="value">XX</span></label>
+          <label for="noise">噪声数量<span class="value">XX</span></label>
           <p class="slider">
             <input class="mdl-slider mdl-js-slider" type="range" id="noise" min="0" max="50" step="5">
           </p>
         </div>
         <div class="ui-batchSize">
-          <label for="batchSize">Batch size:&nbsp;&nbsp;<span class="value">XX</span></label>
+          <label for="batchSize">批量大小<span class="value">XX</span></label>
           <p class="slider">
             <input class="mdl-slider mdl-js-slider" type="range" id="batchSize" min="1" max="30" step="1">
           </p>
         </div>
-          <button class="basic-button" id="data-regen-button" title="Regenerate data">
-            Regenerate
+          <button class="basic-button" id="data-regen-button" title="重新生成数据">
+            重新生成数据
           </button>
       </div>
     </div>
 
     <!-- Features Column -->
     <div class="column features">
-      <h4>Features</h4>
-      <p>Which properties do you want to feed in?</p>
+      <h4>特征值(Features)</h4>
+      <p>选择输入特征值</p>
       <div id="network">
         <svg id="svg" width="510" height="450">
           <defs>
@@ -210,8 +210,8 @@ limitations under the License.
         </svg>
         <!-- Hover card -->
         <div id="hovercard">
-          <div style="font-size:10px">Click anywhere to edit.</div>
-          <div><span class="type">Weight/Bias</span> is <span class="value">0.2</span><span><input type="number"/></span>.</div>
+          <div style="font-size:10px">点击编辑参数</div>
+          <div><span class="type">权重/偏移(Weight/Bias)</span> is <span class="value">0.2</span><span><input type="number"/></span>.</div>
         </div>
         <div class="callout thumbnail">
           <svg viewBox="0 0 30 30">
@@ -223,7 +223,7 @@ limitations under the License.
             <path d="M12,30C5,20 2,15 12,0" marker-end="url(#arrow)">
           </svg>
           <div class="label">
-            This is the output from one <b>neuron</b>. Hover to see it larger.
+            这是一个神经元的输出结果<b>neuron</b>.上轮可以放大展示结果.
           </div>
         </div>
         <div class="callout weights">
@@ -236,7 +236,7 @@ limitations under the License.
             <path d="M12,30C5,20 2,15 12,0" marker-end="url(#arrow)">
           </svg>
           <div class="label">
-            The outputs are mixed with varying <b>weights</b>, shown by the thickness of the lines.
+            这是权重大小输出,通过线的粗细展示.
           </div>
         </div>
       </div>
@@ -261,14 +261,14 @@ limitations under the License.
 
     <!-- Output Column -->
     <div class="column output">
-      <h4>Output</h4>
+      <h4>输出</h4>
       <div class="metrics">
         <div class="output-stats ui-percTrainData">
-          <span>Test loss</span>
+          <span>测试损失</span>
           <div class="value" id="loss-test"></div>
         </div>
         <div class="output-stats train">
-          <span>Training loss</span>
+          <span>训练损失</span>
           <div class="value" id="loss-train"></div>
         </div>
         <div id="linechart"></div>
@@ -279,7 +279,7 @@ limitations under the License.
 
           <!-- Gradient color scale -->
           <div class="label" style="width:105px; margin-right: 10px">
-            Colors shows data, neuron and weight values.
+            颜色展示数据、神经元和权重值.
           </div>
           <svg width="150" height="30" id="colormap">
             <defs>
@@ -298,11 +298,11 @@ limitations under the License.
         <div style="display:flex;">
           <label class="ui-showTestData mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="show-test-data">
             <input type="checkbox" id="show-test-data" class="mdl-checkbox__input" checked>
-            <span class="mdl-checkbox__label label">Show test data</span>
+            <span class="mdl-checkbox__label label">线上测试数据集</span>
           </label>
           <label class="ui-discretize mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="discretize">
             <input type="checkbox" id="discretize" class="mdl-checkbox__input" checked>
-            <span class="mdl-checkbox__label label">Discretize output</span>
+            <span class="mdl-checkbox__label label">离散化输出</span>
           </label>
         </div>
       </div>
@@ -321,41 +321,45 @@ limitations under the License.
 
   <article id="article-text">
     <div class="l--body">
-      <h2>Um, What Is a Neural Network?</h2>
-      <p>It’s a technique for building a computer program that learns from data. It is based very loosely on how we think the human brain works. First, a collection of software “neurons” are created and connected together, allowing them to send messages to each other. Next, the network is asked to solve a problem, which it attempts to do over and over, each time strengthening the connections that lead to success and diminishing those that lead to failure. For a more detailed introduction to neural networks, Michael Nielsen’s <a href="http://neuralnetworksanddeeplearning.com/index.html">Neural Networks and Deep Learning</a> is a good place to start. For a more technical overview, try <a href="http://www.deeplearningbook.org/">Deep Learning</a> by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.</p>
+      <h2>什么是神经网络?</h2>
+      <p>首先是个计算机程序，模拟人的大脑神经系统。
+        首先，创建一组神经元，相互连接成神经网络，能够传递信息。
+        然后，向神经网络发起问题，神经网络一遍遍对问题进行最优化求解。
+        具体技术可以通过互联网共享的知识进行学习。</p>
     </div>
 
     <div class="l--body">
-      <h2>This Is Cool, Can I Repurpose It?</h2>
-      <p>Please do! We’ve open sourced it on <a href="https://github.com/tensorflow/playground">GitHub</a> with the hope that it can make neural networks a little more accessible and easier to learn. You’re free to use it in any way that follows our <a href="https://github.com/tensorflow/playground/blob/master/LICENSE">Apache License</a>. And if you have any suggestions for additions or changes, please <a href="https://github.com/tensorflow/playground/issues">let us know</a>.</p>
-      <p>We’ve also provided some controls below to enable you tailor the playground to a specific topic or lesson. Just choose which features you’d like to be visible below then save <a class="hide-controls-link" href="#">this link</a>, or <a href="javascript:location.reload();">refresh</a> the page.</p>
+      <h2>案例重用和重构?</h2>
+      <p>本案例已经开源在<a href="https://github.com/tensorflow/playground">GitHub</a>
+      <p>项目通过控制进行规格定义，用于课程和学习。修改后
+       <a class="hide-controls-link" href="#">点击</a>, or <a href="javascript:location.reload();">刷新</a></p>
       <div class="hide-controls"></div>
     </div>
 
     <div class="l--body">
-      <h2>What Do All the Colors Mean?</h2>
-      <p>Orange and blue are used throughout the visualization in slightly different ways, but in general orange shows negative values while blue shows positive values.</p>
-      <p>The data points (represented by small circles) are initially colored orange or blue, which correspond to positive one and negative one.</p>
-      <p>In the hidden layers, the lines are colored by the weights of the connections between neurons. Blue shows a positive weight, which means the network is using that output of the neuron as given. An orange line shows that the network is assiging a negative weight.</p>
-      <p>In the output layer, the dots are colored orange or blue depending on their original values. The background color shows what the network is predicting for a particular area. The intensity of the color shows how confident that prediction is.</p>
+      <h2>颜色含义?</h2>
+      <p>桔色和蓝色:桔色是负值，蓝色是正值。</p>
+      <p>数据点初始化为正值和负值。</p>
+      <p>隐藏层，连线表示连接权重，桔色是负值，蓝色是正值。</p>
+      <p>输出层的背景色显示网络预测的区域，颜色的深浅表明预测的可信度。</p>
     </div>
 
     <div class="l--body">
-      <h2>What Library Are You Using?</h2>
-      <p>We wrote a tiny neural network <a href="https://github.com/tensorflow/playground/blob/master/src/nn.ts">library</a>
-      that meets the demands of this educational visualization. For real-world applications, consider the
+      <h2>选择代码库?</h2>
+      <p用于可视化教学的 <a href="https://github.com/tensorflow/playground/blob/master/src/nn.ts">JS库</a>
+      用于产品化采用
       <a href="https://www.tensorflow.org/">TensorFlow</a> library.
       </p>
     </div>
 
     <div class="l--body">
-      <h2>Credits</h2>
+      <h2>感谢</h2>
       <p>
-        This was created by Daniel Smilkov and Shan Carter.
-        This is a continuation of many people’s previous work — most notably Andrej Karpathy’s <a href="http://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html">convnet.js demo</a>
-        and Chris Olah’s <a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">articles</a> about neural networks.
-        Many thanks also to D. Sculley for help with the original idea and to Fernanda Viégas and Martin Wattenberg and the rest of the
-        <a href="https://research.google.com/bigpicture/">Big Picture</a> and <a href="https://research.google.com/teams/brain/">Google Brain</a> teams for feedback and guidance.
+        项目由Daniel Smilkov和Shan Carter完成.
+        基于很多前辈的工作，有Andrej Karpathy’s <a href="http://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html">convnet.js</a>
+        和 Chris Olah的 <a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">神经文章</a>
+        感谢D. Sculley、Fernanda Viégas、Martin Wattenberg的指点和测试。还包括
+        <a href="https://research.google.com/bigpicture/">Big Picture</a> 和 <a href="https://research.google.com/teams/brain/">Google Brain</a> 团队的反馈和指导.
       </p>
     </div>
   </article>
